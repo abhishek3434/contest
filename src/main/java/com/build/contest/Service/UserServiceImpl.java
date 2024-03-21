@@ -39,11 +39,9 @@ public class UserServiceImpl implements UserService{
             UserDto userDto = modelMapper.map(user,UserDto.class);
             userDto.setBadge(setBadgeBasedonScore(userDto.getScore()));
 
-            if(userDto.getScore() == null) userDto.setScore(0);
-
             usersList.add(userDto);
         }
-        Collections.sort(usersList,(a,b)->a.getScore()-b.getScore());
+        Collections.sort(usersList,(a,b)->b.getScore()-a.getScore());
         return usersList;
     }
 

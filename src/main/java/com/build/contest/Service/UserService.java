@@ -14,5 +14,5 @@ public interface UserService {
 
     public User updateUser(String id,Integer score) throws UserNotFoundException;
 
-    public void deleteUser(String id);
+    public void deleteUser(String id) throws UserNotFoundException;
 }
